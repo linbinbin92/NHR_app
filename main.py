@@ -20,7 +20,7 @@ def resizeimg(img_path):
 
 
 st.write("""# Data-driven model by MFM-IMM """)
-st.image("fracture_path.png")
+st.image("logo.png")
 st.markdown('---')
 st.write("""
 ## This web-based interative tool provide a deep-learning-based *image, mechanical* analysis of __Dual phase steel __on the fly.
