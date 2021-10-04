@@ -19,8 +19,8 @@ def resizeimg(img_path):
     return img
 
 
-st.write("""# Data-driven model by MFM-IMM """)
-st.image("logo.png")
+st.write("""# Image-Data-driven model by IMM-MFM """)
+#st.image("logo.png")
 st.markdown('---')
 st.write("""
 ## This web-based interative tool provide a deep-learning-based *image, mechanical* analysis of __Dual phase steel __on the fly.
@@ -36,7 +36,7 @@ load_disp_img = Image.open("load_displacement_curve.png")
 
 def user_input_features(seg):
 
-    Inputdata_typ = st.sidebar.selectbox('Input datatyp', ('Image', 'Numerical data',))
+    Inputdata_typ = st.sidebar.selectbox('Input datatyp', ('Image', 'Feature data',))
     if Inputdata_typ == 'Image':
 
         # Collects user input features into dataframe
@@ -59,9 +59,9 @@ def user_input_features(seg):
     if analysis_typ == 'Image analysis':
         function_ = st.sidebar.selectbox('Functions',('Segmentation','Feature analysis'))
         if function_ == 'Feature analysis':
-            feature1 = st.sidebar.checkbox('F1')
-            feature2 = st.sidebar.checkbox('F2')
-            feature3 = st.sidebar.checkbox('F3')
+            feature1 = st.sidebar.checkbox('Feature 1')
+            feature2 = st.sidebar.checkbox('Feature 2')
+            feature3 = st.sidebar.checkbox('Feature 3')
 
     elif analysis_typ == 'Mechanical analysis':
         function_ = st.sidebar.selectbox('Functions', ('Stress Visualiaztion', 'Crack pattern','Load-displacement Curve'))
@@ -115,7 +115,8 @@ def user_input_features(seg):
 
     elif run_ and function_ == 'Stress Visualiaztion':
         st.markdown('---')
-        st.warning('Function not available yet')
+        st.write("""This is the visualization we could provide:""")
+        st.image(crack_pattern_img)
 
 
 #st.write("""The function is not available yet""")
