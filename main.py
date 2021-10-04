@@ -68,7 +68,7 @@ def user_input_features(seg):
 
     elif analysis_typ == 'Mechanical analysis':
         function_ = st.sidebar.selectbox('Functions', ('Mesh Creation','Stress Visualiaztion', 'Crack pattern','Stress-Strain Curve'))
-        if function_ == 'Mesh creation':
+        if function_ == 'Mesh Creation':
             st.write("""Please select the mesh size: """)
             add_slider = st.sidebar.slider(
                 'Select a range of values',
@@ -120,7 +120,7 @@ def user_input_features(seg):
     elif run_ and function_ == 'Stress-Strain Curve':
         if loading_x:
             st.markdown('---')
-            st.write("""This is the visualization we could provide:""")
+            st.write("""This is the Stress-Strain Curve we could provide:""")
             st.image(load_disp_img)
         else:
             st.warning('Function not available yet')
@@ -128,11 +128,12 @@ def user_input_features(seg):
 
     elif run_ and function_ == 'Stress Visualiaztion':
         st.markdown('---')
-        st.write("""This is the visualization we could provide:""")
+        st.write("""This is the Stress visualization we could provide:""")
         st.image(stress_field_X)
 
     elif run_ and function_ == 'Mesh creation':
-
+        st.markdown('---')
+        st.write("""This is the Mesh we could provide, you can save the .geo file by clicking the button:""")
         st.image(mesh)
 
 
