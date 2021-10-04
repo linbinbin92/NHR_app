@@ -70,9 +70,9 @@ def user_input_features(seg):
         function_ = st.sidebar.selectbox('Functions', ('Mesh Creation','Stress Visualiaztion', 'Crack pattern','Stress-Strain Curve'))
         if function_ == 'Mesh Creation':
             st.write("""Please select the mesh size: """)
-            add_slider = st.sidebar.slider(
+            add_slider = st.slider(
                 'Select a range of values',
-                0.0, 10, (2,4,6,8)
+                0.0, 10.0, (2.0,4.0,6.0,8.0)
             )
 
 
