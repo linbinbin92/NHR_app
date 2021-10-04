@@ -32,6 +32,8 @@ st.markdown('---')
 
 seg = resizeimg("sematic_segmented.png")
 crack_pattern_img = resizeimg("fracture_path.PNG")
+stress_field_X= resizeimg("stress_field.png")
+
 load_disp_img = Image.open("load_displacement_curve.png")
 
 def user_input_features(seg):
@@ -64,7 +66,7 @@ def user_input_features(seg):
             feature3 = st.sidebar.checkbox('Feature 3')
 
     elif analysis_typ == 'Mechanical analysis':
-        function_ = st.sidebar.selectbox('Functions', ('Stress Visualiaztion', 'Crack pattern','Load-displacement Curve'))
+        function_ = st.sidebar.selectbox('Functions', ('Stress Visualiaztion', 'Crack pattern','Stress-Strain Curve'))
         loading_x = st.sidebar.checkbox('loading - x')
         loading_y = st.sidebar.checkbox('loading - y')
         loading_xy = st.sidebar.checkbox('loading - xy')
@@ -116,7 +118,7 @@ def user_input_features(seg):
     elif run_ and function_ == 'Stress Visualiaztion':
         st.markdown('---')
         st.write("""This is the visualization we could provide:""")
-        st.image(crack_pattern_img)
+        st.image(stress_field_X)
 
 
 #st.write("""The function is not available yet""")
