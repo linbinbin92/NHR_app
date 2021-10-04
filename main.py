@@ -117,7 +117,7 @@ def user_input_features(seg):
 
 
 
-    elif run_ and function_ == 'Load-displacement Curve':
+    elif run_ and function_ == 'Stress-Strain Curve':
         if loading_x:
             st.markdown('---')
             st.write("""This is the visualization we could provide:""")
