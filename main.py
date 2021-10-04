@@ -33,7 +33,7 @@ st.markdown('---')
 seg = resizeimg("sematic_segmented.png")
 crack_pattern_img = resizeimg("fracture_path.PNG")
 stress_field_X= resizeimg("stress_field.png")
-mesh= resizeimg("Mesh.png.png")
+mesh= resizeimg("Mesh.png")
 
 load_disp_img = Image.open("load_displacement_curve.png")
 
