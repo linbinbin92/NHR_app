@@ -77,7 +77,7 @@ def user_input_features(seg):
 
 
 
-        if analysis_typ == 'Mechanical analysis' and function_ == 'Stress Visualiaztion' or 'Crack pattern' or 'Stress-Strain Curve':
+        elif analysis_typ == 'Mechanical analysis' and function_ == 'Stress Visualiaztion' or 'Crack pattern' or 'Stress-Strain Curve':
 
             loading_x = st.sidebar.checkbox('loading - x')
             loading_y = st.sidebar.checkbox('loading - y')
