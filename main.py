@@ -33,6 +33,7 @@ st.markdown('---')
 seg = resizeimg("sematic_segmented.png")
 crack_pattern_img = resizeimg("fracture_path.PNG")
 stress_field_X= resizeimg("stress_field.png")
+mesh= resizeimg("Mesh.png.png")
 
 load_disp_img = Image.open("load_displacement_curve.png")
 
@@ -66,10 +67,20 @@ def user_input_features(seg):
             feature3 = st.sidebar.checkbox('Feature 3')
 
     elif analysis_typ == 'Mechanical analysis':
-        function_ = st.sidebar.selectbox('Functions', ('Stress Visualiaztion', 'Crack pattern','Stress-Strain Curve'))
-        loading_x = st.sidebar.checkbox('loading - x')
-        loading_y = st.sidebar.checkbox('loading - y')
-        loading_xy = st.sidebar.checkbox('loading - xy')
+        function_ = st.sidebar.selectbox('Functions', ('Mesh Creation','Stress Visualiaztion', 'Crack pattern','Stress-Strain Curve'))
+        if function_ == 'Mesh creation':
+            st.write("""Please select the mesh size: """)
+            add_slider = st.sidebar.slider(
+                'Select a range of values',
+                0.0, 10, (2,4,6,8)
+            )
+
+
+        if function_ == 'Stress Visualiaztion' or 'Crack pattern' or 'Stress-Strain Curve':
+
+            loading_x = st.sidebar.checkbox('loading - x')
+            loading_y = st.sidebar.checkbox('loading - y')
+            loading_xy = st.sidebar.checkbox('loading - xy')
 
 
     run_ = st.sidebar.button('run analysis')
@@ -92,7 +103,7 @@ def user_input_features(seg):
             st.altair_chart(c, use_container_width=True)
 
         else:
-            st.warning('Function not available yet')
+            st.warning('The current function not available yet, please select another function')
 
 
     elif run_ and function_ == 'Crack pattern':
@@ -119,6 +130,10 @@ def user_input_features(seg):
         st.markdown('---')
         st.write("""This is the visualization we could provide:""")
         st.image(stress_field_X)
+
+    elif run_ and function_ == 'Mesh creation':
+
+        st.image(mesh)
 
 
 #st.write("""The function is not available yet""")
